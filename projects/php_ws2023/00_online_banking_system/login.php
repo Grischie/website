@@ -8,7 +8,7 @@ include('password.inc.php');
 $con = mysqli_connect("localhost", "root", $ps, "online_banking");
 
 //SQL Statement herstellen
-$sql = "select name, password form User";
+$sql = "select name, password from User";
 $sql .= " where name = " . $_POST["name"];
 
 //SQL Query senden
