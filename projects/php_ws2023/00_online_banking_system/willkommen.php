@@ -1,5 +1,6 @@
 <?php
-	include_once("check_head.php");
+	session_start();
+	if (isset($_SESSION["login"]) && $_SESSION["login"] == "ok") {
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,5 +17,11 @@
 </body>
 </html>
 <?php
-	include_once("check_foot.php");
+	} else {
+		$host = htmlspecialchars
+		($_SERVER["HTTP_HOST"]);
+		$uri = rtrim(dirname(htmlspecialchars($_SERVER["PHP_SELF"])),"/\\");
+		$extra = "start.php";
+		header("Location:http://$host$uri/$extra");
+	}
 ?>
