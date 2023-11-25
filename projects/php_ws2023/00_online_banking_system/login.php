@@ -31,7 +31,7 @@ if (isset($_POST["name"]) && $_POST["name"] == $dsatz["name"] && $_POST["passwor
 	}
 	exit;
 } else {
-	header("Location: start.php?f=1"); 
+	header("Location: start_login.php?f=1"); 
 exit;
 } 
 ?> 
