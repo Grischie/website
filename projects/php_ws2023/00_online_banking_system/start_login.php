@@ -32,5 +32,7 @@ if (isset($_SESSION["login"]) && $_SESSION["login"] == "ok") {
 		<input type="password" name="passwort"size="20" /><br /><br/ >
 		<input type="submit" value="Login" />
 	</form>
+	<br /><br /><br /><br />
+	<a href="http://www.grischek-net.de/projects/php_ws2023/00_online_banking_system/index.html">Zurück</a>
 </body>
 </html>

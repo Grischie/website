@@ -53,5 +53,7 @@ if (isset($_SESSION["login"]) && $_SESSION["login"] == "ok") {
 		<input type="password" name="passwort_2"size="20" /><br /><br /><br />
 		<input type="submit" value="Registrieren" />
 	</form>
+	<br /><br /><br /><br />
+	<a href="http://www.grischek-net.de/projects/php_ws2023/00_online_banking_system/index.html">Zurück</a>
 </body>
 </html>
