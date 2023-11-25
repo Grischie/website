@@ -10,13 +10,13 @@
 <body>
 	<?php 
 		if (isset($_GET["f"]) && $_GET["f"] == 1) {
-			echo "<p class='fehler'>Der Name ist schon vorhanden. Bitte aendern!</p>";
+			echo "<p class='fehler'>Der Name ist schon vorhanden. Bitte ändern!</p>";
 		} elseif (isset($_GET["f"]) && $_GET["f"] == 2) {
-			echo "<p class='fehler'>Bitte ein Konto auswaehlen!</p>";
+			echo "<p class='fehler'>Bitte ein Konto auswählen!</p>";
 		} elseif (isset($_GET["f"]) && $_GET["f"] == 3) {
-			echo "<p class='fehler'>Passwort stimmt nicht ueberein!</p>"; 
+			echo "<p class='fehler'>Passwort stimmt nicht überein!</p>"; 
 		} elseif (isset($_GET["f"]) && $_GET["f"] == 4) {
-			echo "<p class='fehler'>Nicht alle Felder ausgefuellt!</p>";
+			echo "<p class='fehler'>Nicht alle Felder ausgefüllt!</p>";
 		}
 	?>
 	<form action="registration.php" method="post" >
