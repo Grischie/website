@@ -24,22 +24,22 @@
 		Vorname: 
 		<input type="text" name="vorname" size="20" />
 		Name: 
-		<input type="text" name="name" size="20" /><br />
+		<input type="text" name="name" size="20" /><br /><br />
 		E-mail: 
-		<input type="email" name="mail" size="40" /><br />
+		<input type="email" name="mail" size="40" /><br /><br />
 		Geburtstag: 
-		<input type="date" name="geburtstag" max="<?php echo date('Y-m-d'); ?>"/><br /><br />
+		<input type="date" name="geburtstag" max="<?php echo date('Y-m-d'); ?>"/><br /><br /><br />
 		Ein Konto auswählen:<br />
 		Nachfragende:
 		<input type="checkbox" name="rechte_1" />
 		Kreditanbietende:
-		<input type="checkbox" name="rechte_0" /><br /><br />
+		<input type="checkbox" name="rechte_0" /><br /><br /><br />
 		Start Kapital: 
-		<input type="number" name="kapital" size="20" min="0" max="1000000" />€<br /><br />
+		<input type="number" name="kapital" size="20" min="0" max="1000000" />€<br /><br /><br />
 		Passwort: <br />
-		<input type="password" name="passwort_1"size="20" /><br />€
+		<input type="password" name="passwort_1"size="20" /><br /><br />
 		Passwort erneut eingeben: <br />
-		<input type="password" name="passwort_2"size="20" /><br /><br />
+		<input type="password" name="passwort_2"size="20" /><br /><br /><br />
 		<input type="submit" value="Registrieren" />
 	</form>
 </body>
