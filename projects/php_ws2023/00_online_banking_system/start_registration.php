@@ -4,20 +4,19 @@
 	<meta charset="UTF-8" />
 	<title>Registration</title>
 	<style>
-		html { height: 100%; width: 100%; text-align: center; }
 		.fehler { color: red; }
 	</style>
 </head>
 <body>
 	<?php 
 		if (isset($_GET["f"]) && $_GET["f"] == 1) {
-			echo "<p class='fehler'>Der Name ist schon vorhanden. Bitte ändern!</p>";
+			echo "<p class='fehler'>Der Name ist schon vorhanden. Bitte aendern!</p>";
 		} elseif (isset($_GET["f"]) && $_GET["f"] == 2) {
-			echo "<p class='fehler'>Bitte ein Konto auswählen!</p>";
+			echo "<p class='fehler'>Bitte ein Konto auswaehlen!</p>";
 		} elseif (isset($_GET["f"]) && $_GET["f"] == 3) {
-			echo "<p class='fehler'>Passwort stimmt nicht überein!</p>"; 
+			echo "<p class='fehler'>Passwort stimmt nicht ueberein!</p>"; 
 		} elseif (isset($_GET["f"]) && $_GET["f"] == 4) {
-			echo "<p class='fehler'>Nicht alle Felder ausgefüllt!</p>";
+			echo "<p class='fehler'>Nicht alle Felder ausgefuellt!</p>";
 		}
 	?>
 	<form action="registration.php" method="post" >

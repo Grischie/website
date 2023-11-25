@@ -4,7 +4,6 @@
 	<meta charset="UTF-8" />
 	<title>Login</title>
 	<style>
-		html { height: 100%; width: 100%; text-align: center; }
 		.fehler { color: red; }
 	</style>
 </head>
