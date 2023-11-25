@@ -2,8 +2,8 @@
 session_start(); 
 
 //Prüfen ob die eingegebnen Daten korrekt sind
-if (isset($_POST["vorname"]) && isset($_POST["name"]) && isset($_POST["mail"]) && isset($_POST["geburtstag"]) && isset($_POST["kapital"]) && isset($_POST["passwort_1"]) && isset($_POST["passwort_2"])) {
-    
+if (isset($_POST["vorname"]) && $_POST["vorname"] != "" && isset($_POST["name"]) && $_POST["name"] != "" &&  isset($_POST["mail"]) && $_POST["mail"] != "" &&  isset($_POST["geburtstag"]) && $_POST["geburtstag"] != "" &&  isset($_POST["kapital"]) && $_POST["kapital"] != "" &&  isset($_POST["passwort_1"]) && $_POST["passwort_1"] != "" &&  isset($_POST["passwort_2"])) {
+
     //Password für die Datenbank importierens
     include('password.inc.php');	
 
