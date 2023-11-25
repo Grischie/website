@@ -16,6 +16,7 @@ $res = mysqli_query($con, $sql);
 
 //Anzahl der SQL ergebnisse 
 $num = mysqli_num_rows($res);
+echo $num;
 if ($num = 0){
 	header("Location: start_login.php?f=1"); 
 	exit;
