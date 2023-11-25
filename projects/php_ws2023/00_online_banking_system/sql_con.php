@@ -9,7 +9,7 @@ $username = "test_user1";
 //SQL Statement herstellen
 //$sql = "select name, password from User";
 //$sql .= " where name = " . $username;
-$sql = "select * from User";
+$sql = 'select * from User where name = "test_user1"' ;
 //SQL Query senden
 $res = mysqli_query($con, $sql);
 
