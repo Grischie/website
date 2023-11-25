@@ -8,7 +8,7 @@ include('password.inc.php');
 $con = mysqli_connect("localhost", "root", $ps, "online_banking");
 
 //SQL Statement herstellen
-$sql = "select name, password from User";
+$sql = "select name, password, rechte from User";
 $sql .= ' where name = "'. $_POST["name"] .'"';
 
 //SQL Query senden
@@ -24,7 +24,11 @@ $dsatz = mysqli_fetch_assoc($res);
 if (isset($_POST["name"]) && $_POST["name"] == $dsatz["name"] && $_POST["passwort"] == $dsatz["password"]) {
 	$_SESSION["name"] = $_POST["name"]; 
 	$_SESSION["login"] = "ok";
-	header("Location: willkommen.php");
+	if($dsatz["rechte"] == 0){
+		header("Location: willkommen_kreditanbietende.php");
+	} else {
+		header("Location: willkommen_nachfragende.php");
+	}
 	exit;
 } else {
 	header("Location: start.php?f=1"); 

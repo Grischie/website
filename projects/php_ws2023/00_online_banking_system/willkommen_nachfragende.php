@@ -6,7 +6,7 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Willkommen im geschützten Bereich</title>
+	<title>Nachfragende</title>
 </head>
 <body>
 	<?php
