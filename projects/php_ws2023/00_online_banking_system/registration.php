@@ -1,8 +1,22 @@
 <?php
 session_start(); 
+
 //Prüfen ob die eingegebnen Daten korrekt sind
 if (isset($_POST["vorname"]) && isset($_POST["name"]) && isset($_POST["mail"]) && isset($_POST["geburtstag"]) && isset($_POST["kapital"]) && isset($_POST["passwort_1"]) && isset($_POST["passwort_2"])) {
+    
+    //Password für die Datenbank importierens
+    include('password.inc.php');	
 
+    //Connection zur Dantenbank herstellen
+    $con = mysqli_connect("localhost", "root", $ps, "online_banking");
+
+    //SQL Statement herstellen
+    $sql_user = "select name, from User";
+    $sql_user .= ' where name = "'. $_POST["name"] .'"';
+
+    //SQL Query senden
+    $res_user = mysqli_query($con, $sql_user);
+    
 	if (isset($_POST["rechte_0"]) == isset($_POST["rechte_1"])){
         header("Location: start_registration.php?f=2"); 
         exit;

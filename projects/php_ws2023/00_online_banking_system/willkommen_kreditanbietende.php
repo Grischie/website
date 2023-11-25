@@ -1,6 +1,10 @@
 <?php
 	session_start();
 	if (isset($_SESSION["login"]) && $_SESSION["login"] == "ok") {
+		if ($_SESSION["rechte"] != 0){
+			header("Location: willkommen_nachfragende.php");
+			exit;
+		}
 ?>
 <!DOCTYPE html>
 <html>

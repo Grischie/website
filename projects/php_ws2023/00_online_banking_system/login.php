@@ -24,6 +24,7 @@ $dsatz = mysqli_fetch_assoc($res);
 if (isset($_POST["name"]) && $_POST["name"] == $dsatz["name"] && $_POST["passwort"] == $dsatz["password"]) {
 	$_SESSION["name"] = $_POST["name"]; 
 	$_SESSION["login"] = "ok";
+	$_SESSION["rechte"] = $dsatz["rechte"];
 	if($dsatz["rechte"] == 0){
 		header("Location: willkommen_kreditanbietende.php");
 	} else {
