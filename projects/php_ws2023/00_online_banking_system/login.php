@@ -16,7 +16,10 @@ $res = mysqli_query($con, $sql);
 
 //Anzahl der SQL ergebnisse 
 $num = mysqli_num_rows($res);
-
+if ($num = 0){
+	header("Location: start_login.php?f=1"); 
+	exit;
+}
 //Datensatz holen
 $dsatz = mysqli_fetch_assoc($res);	
 
@@ -35,4 +38,4 @@ if (isset($_POST["name"]) && $_POST["name"] == $dsatz["name"] && $_POST["passwor
 	header("Location: start_login.php?f=1"); 
 exit;
 } 
-?> 
+?>
