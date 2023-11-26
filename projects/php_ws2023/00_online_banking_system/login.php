@@ -28,7 +28,7 @@ if (isset($_POST["name"]) && $_POST["name"] == $dsatz["name"] && $_POST["passwor
 	$_SESSION["name"] = $_POST["name"]; 
 	$_SESSION["login"] = "ok";
 	$_SESSION["rechte"] = $dsatz["rechte"];
-	$_SESSION["kontonummer"] = $dsatz["kontonummer"];
+	$_SESSION["kontonummer"] = str_pad((string)$dsatz["kontonummer"], 5, '0', STR_PAD_LEFT);
 	if($dsatz["rechte"] == 0){
 		header("Location: kreditanbietender.php");
 	} else {

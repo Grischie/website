@@ -41,9 +41,11 @@
         } else {
             while ($dsatz_hist = mysqli_fetch_assoc($res_hist)){
                 if (intval($dsatz_hist["betrag"]) > 0){
-                    echo "Von" .$dsatz_hist["kontonummer_b"] . " -- " . $dsatz_hist["betrag"] . "€<br />";
+                    $konto = str_pad((string)$dsatz_hist['kontonummer_b'], 5, '0', STR_PAD_LEFT);
+                    echo "Von Konto: " . $konto . " -- " . $dsatz_hist["betrag"] . "€ bekommen<br />";
                 } else {
-                    echo "Zu" .$dsatz_hist["kontonummer_b"] . " -- " . $dsatz_hist["betrag"] . "€<br />";
+                    $konto = str_pad((string)$dsatz_hist['kontonummer_s'], 5, '0', STR_PAD_LEFT);
+                    echo "Zu Konto: " . $konto . " -- " . $dsatz_hist["betrag"] . "€ überwiesen<br />";
                 }
             }
         }

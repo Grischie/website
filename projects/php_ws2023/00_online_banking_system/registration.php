@@ -70,7 +70,7 @@ if (isset($_POST["vorname"]) && $_POST["vorname"] != "" && isset($_POST["name"])
     $_SESSION["name"] = $_POST["name"]; 
 	$_SESSION["login"] = "ok";
     $_SESSION["rechte"] = $rechte;
-    $_SESSION["kontonummer"] = $new_kn;
+    $_SESSION["kontonummer"] = str_pad((string)$new_kn, 5, '0', STR_PAD_LEFT);
 	if($dsatz["rechte"] == 0){
 		header("Location: kreditanbietender.php");
 	} else {
