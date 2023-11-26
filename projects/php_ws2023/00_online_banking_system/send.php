@@ -12,7 +12,7 @@ if (isset($_POST["kontonummer"]) && $_POST["kontonummer"] != "" && $_POST["betra
     $res_konto = mysqli_query($con, $sql_konto);
     $dsatz_konto = intval(mysqli_fetch_assoc($res_konto)["status"]);
 	if ($dsatz_konto < intval($_POST["betrag"])){
-		header("Location: geld_send.php?f=1");
+		header("Location: geld_senden.php?f=1");
 		exit;
 	}
 
@@ -21,7 +21,7 @@ if (isset($_POST["kontonummer"]) && $_POST["kontonummer"] != "" && $_POST["betra
     $res_konto = mysqli_query($con, $sql_konto);
 	$num_konto = mysqli_num_rows($res_konto);
 	if ($num_konto == 0) {
-		header("Location: geld_send.php?f=2");
+		header("Location: geld_senden.php?f=2");
 		exit;
 	}
 
@@ -49,10 +49,10 @@ if (isset($_POST["kontonummer"]) && $_POST["kontonummer"] != "" && $_POST["betra
 	mysqli_query($con, $sql_new_2);
 	mysqli_query($con, $sql_update);
 	mysqli_close($con);
-	header("Location: geld_send.php?f=3"); 
+	header("Location: geld_senden.php?f=3"); 
 	exit;
 } else {
-	header("Location: geld_send.php?f=4"); 
+	header("Location: geld_senden.php?f=4"); 
 exit;
 } 
 ?>
