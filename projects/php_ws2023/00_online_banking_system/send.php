@@ -44,7 +44,7 @@ if (isset($_POST["kontonummer"]) && $_POST["kontonummer"] != "" && $_POST["betra
 	$_SESSION["status"] = intval($_SESSION["status"]) - intval($_POST["betrag"]);
 
 	$sql_update_1= "update Konto set status = '" . intval($_SESSION["status"]) - intval($_POST["betrag"]) ."' where kontonummer = '". intval($_SESSION["kontonummer"]) ."'";
-	$sql_update_2 = "update Konto set status = '" . intval($dsatz_konto) + intval($_POST["betrag"]) ."' where kontonummer = '". intval($_POST["kontonummer"]) ."'";
+	$sql_update_2 = "update Konto set status = '" . intval($dsatz_ziel) + intval($_POST["betrag"]) ."' where kontonummer = '". intval($_POST["kontonummer"]) ."'";
 
 	mysqli_query($con, $sql_new_1);
 	mysqli_query($con, $sql_new_2);
