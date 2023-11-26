@@ -13,7 +13,7 @@ $sql_max = "select max(kontonummer) from User";
 $res_max = mysqli_query($con, $sql_max);
 $max_kn = mysqli_fetch_assoc($res_max);	
 $num = mysqli_num_rows($res_max);
-echo $max_kn;
+echo var_dump($max_kn) ;
 echo "<br />";
 
 $max_kn = $max_kn["kontonummer"];
