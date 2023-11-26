@@ -53,17 +53,18 @@ if (isset($_POST["vorname"]) && $_POST["vorname"] != "" && isset($_POST["name"])
         . $_POST["vorname"] . "', '"
         . $_POST["mail"] . "', '"
         . $_POST["passwort_1"] . "', '"
-        . date('Y-m-d', strtotime($_POST["geburtstag"])) . "', '"
+        . $_POST["geburtstag"] . "', '"
         . $new_kn . "', '"
         . $rechte . "'"
         .")";
     mysqli_query($con, $sql_new);
-     */
+    */
     //Neue Daten anbinden in Konto Datenbank
-    $sql_new = "insert into Konto (kontonummer, status) values "
+    $sql_new = "insert into Konto (kontonummer, status, verlauf) values "
         . "('" 
         . $new_kn . "', '"
-        . $_POST["kapital"] ."'"
+        . $_POST["kapital"] . "', '"
+        . "" ."'"
         .")";
     mysqli_query($con, $sql_new);
   
