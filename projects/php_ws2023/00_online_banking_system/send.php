@@ -50,7 +50,9 @@ if (isset($_POST["kontonummer"]) && $_POST["kontonummer"] != "" && $_POST["betra
 	mysqli_query($con, $sql_new_1);
 	mysqli_query($con, $sql_new_2);
 	mysqli_query($con, $sql_update);
-
+	mysqli_close($con);
+	header("Location: geld_send.php?f=3"); 
+	exit;
 } else {
 	header("Location: geld_send.php?f=4"); 
 exit;
