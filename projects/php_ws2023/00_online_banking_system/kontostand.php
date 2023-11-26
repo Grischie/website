@@ -31,12 +31,11 @@
 <body>
     <h1>Kontostand</h1>
 	<?php
-		echo "<h2>Kontonummer: {$_SESSION['kontonummer']}<br />Kontostand: {$_SESSION['status']}€s";
+		echo "<h2>Kontonummer: {$_SESSION['kontonummer']}<br />Kontostand: {$_SESSION['status']}€";
 	?>
     <h2>Verlauf</h2>
     <p>
     <?php 
-        /*
         if ($num == 0){
             echo "Keinen Verlauf gefunden"; 
         } else {
@@ -49,7 +48,6 @@
             }
         }
        mysqli_close($con);
-       */
 	?>
     </p>
 	<p><a href="kreditanbietender.php">Zurück</p>
