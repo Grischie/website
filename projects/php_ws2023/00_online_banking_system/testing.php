@@ -16,7 +16,7 @@ $num = mysqli_num_rows($res_max);
 echo var_dump($max_kn) ;
 echo "<br />";
 
-$max_kn = $max_kn["max(kontonummer)"];
+$max_kn = intval($max_kn["max(kontonummer)"]);
 echo $max_kn;
 echo "<br />";
 
