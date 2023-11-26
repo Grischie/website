@@ -40,13 +40,8 @@
             echo "Keinen Verlauf gefunden"; 
         } else {
             while ($dsatz_hist = mysqli_fetch_assoc($res_hist)){
-                if (intval($dsatz_hist["betrag"]) > 0){
-                    $konto = str_pad((string)$dsatz_hist['kontonummer_b'], 5, '0', STR_PAD_LEFT);
-                    echo "Von Konto: " . $konto . " -- " . $dsatz_hist["betrag"] . "€ bekommen<br />";
-                } else {
-                    $konto = str_pad((string)$dsatz_hist['kontonummer_s'], 5, '0', STR_PAD_LEFT);
-                    echo "Zu Konto: " . $konto . " -- " . $dsatz_hist["betrag"] . "€ überwiesen<br />";
-                }
+                $konto = str_pad((string)$dsatz_hist['kontonummer_b'], 5, '0', STR_PAD_LEFT);
+                echo "Von Konto: " . $konto . " || " . $dsatz_hist["betrag"] . "€ bekommen<br />";
             }
         }
        mysqli_close($con);
