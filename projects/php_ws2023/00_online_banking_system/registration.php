@@ -60,17 +60,17 @@ if (isset($_POST["vorname"]) && $_POST["vorname"] != "" && isset($_POST["name"])
     mysqli_query($con, $sql_new);
    
     //Neue Daten anbinden in Konto Datenbank
-    $sql_new = "insert into Konto (kontonummer, status, verlauf) values "
+    $sql_new = "insert into Konto (kontonummer, status) values "
         . "('" 
         . $new_kn . "', '"
-        . $_POST["kapital"] . "', '"
-        . "" ."'"
+        . $_POST["kapital"] ."'"
         .")";
     mysqli_query($con, $sql_new);
     mysqli_close($con);
     $_SESSION["name"] = $_POST["name"]; 
 	$_SESSION["login"] = "ok";
     $_SESSION["rechte"] = $rechte;
+    $_SESSION["kontonummer"] = $new_kn;
 	if($dsatz["rechte"] == 0){
 		header("Location: kreditanbietender.php");
 	} else {
