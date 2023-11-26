@@ -31,7 +31,7 @@
 <body>
     <h1>Kontostand</h1>
 	<?php
-		echo "<h2>Kontonummer: {$_SESSION['kontonummer']}<br />Kontostand: {$_SESSION['status']}";
+		echo "<h2>Kontonummer: {$_SESSION['kontonummer']}<br />Kontostand: {$_SESSION['status']}€s";
 	?>
     <h2>Verlauf</h2>
     <p>
