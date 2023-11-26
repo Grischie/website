@@ -41,7 +41,7 @@
         } else {
             while ($dsatz_hist = mysqli_fetch_assoc($res_hist)){
                 $konto = str_pad((string)$dsatz_hist['kontonummer_b'], 5, '0', STR_PAD_LEFT);
-                echo "Von Konto: " . $konto . " || " . $dsatz_hist["betrag"] . "€ bekommen<br />";
+                echo  $konto . " || " . $dsatz_hist["betrag"] . "€<br />";
             }
         }
        mysqli_close($con);
