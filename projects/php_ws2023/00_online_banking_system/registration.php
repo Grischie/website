@@ -34,6 +34,7 @@ if (isset($_POST["vorname"]) && $_POST["vorname"] != "" && isset($_POST["name"])
     $sql_max = "select max(kontonummer) from User";
     $res_max = mysqli_query($con, $sql_max);
     $max_kn = mysqli_fetch_assoc($res_max);	
+    $max_kn = $max_kn["Kontonummer"];
     $new_kn = $max_kn + 1;
 
     //Art des Konto definieren
