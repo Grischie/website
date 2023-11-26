@@ -9,19 +9,13 @@ if (isset($_POST["vorname"]) && $_POST["vorname"] != "" && isset($_POST["name"])
 
     //Connection zur Dantenbank herstellen
     $con = mysqli_connect("localhost", "root", $ps, "online_banking");
-
-    //SQL Statement herstellen
     $sql_user = "select name from User";
     $sql_user .= ' where name = "'. $_POST["name"] .'"';
-
-    //SQL Query senden
     $res_user = mysqli_query($con, $sql_user);
+    $num_user = mysqli_num_rows($res_user);
 
-    //Anzahl der SQL ergebnisse 
-    $num = mysqli_num_rows($res_user);
-
-    //Prüfe ob name schonmal verwendet wurde
-    if ($num == 1){
+    //Prüfe nach Fehler
+    if ($num_user == 1){
         header("Location: start_registration.php?f=1"); 
         exit;
     }
@@ -33,9 +27,50 @@ if (isset($_POST["vorname"]) && $_POST["vorname"] != "" && isset($_POST["name"])
         header("Location: start_registration.php?f=3"); 
         exit;
     }
-    //Datenbankanbindung ...
+
+    //Datenbankanbindung 
+
+    //Neue Kontonummer generieren 
+    $sql_max = "select max(kontonummer) from User";
+    $res_max = mysqli_query($con, $sql_max);
+    $max_kn = mysqli_fetch_assoc($res_max);	
+    $max_kn = $max_kn["kontonummer"];
+    $new_kn = $max_kn + 1;
+
+    //Art des Konto definieren
+    $rechte = 0;
+    if ($_POST["rechte_0"] ==  true) {
+        $rechte = 0;
+    } elseif($_POST["rechte_1"] ==  true) {
+        $rechte = 1;
+    }
+
+    //Neue Daten anbinden in User Datenbank
+    $sql_new = "insert into User (name, vorname, mail, password, geburtstag, kontonummer, rechte) values "
+        . "('" 
+        . $_POST["name"] . "', '"
+        . $_POST["vorname"] . "', '"
+        . $_POST["mail"] . "', '"
+        . $_POST["passwort_1"] . "', '"
+        . $_POST["geburtstag"] . "', '"
+        . $new_kn . "', '"
+        . $rechte . "'"
+        .")";
+    mysqli_query($con, $sql_new);
+
+    //Neue Daten anbinden in Konto Datenbank
+    $sql_new = "insert into User (kontonummer, status) values "
+        . "('" 
+        . $new_kn . "', '"
+        . $_POST["kapital"] ."'"
+        .")";
+    mysqli_query($con, $sql_new);
+
+
+
     $_SESSION["name"] = $_POST["name"]; 
 	$_SESSION["login"] = "ok";
+    $_SESSION["rechte"] = $rechte;
 	if($dsatz["rechte"] == 0){
 		header("Location: willkommen_kreditanbietende.php");
 	} else {
