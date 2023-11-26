@@ -24,12 +24,14 @@
 			echo "<p class='fehler'>Nicht genügent Geld</p>";
 		} elseif (isset($_GET["f"]) && $_GET["f"] == 2) {
 			echo "<p class='fehler'>Kontonummer nicht korrekt</p>";
+		} elseif (isset($_GET["f"]) && $_GET["f"] == 4) {
+			echo "<p class='fehler'>Nicht alles ausgefüllt</p>";
 		} 
 	?>
     <p>
     <form action="send.php" method="post" >
 		Konto: <br />
-		<input type="text" name="kontonummer" size="20" /><br /><br />
+		<input type="number" name="kontonummer" size="20" /><br /><br />
 		Betrag: <br />
 		<input type="number" name="betrag"size="20" /><br /><br />
         Kommentar: <br />

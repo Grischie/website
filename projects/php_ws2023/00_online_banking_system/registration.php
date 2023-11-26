@@ -77,6 +77,7 @@ if (isset($_POST["vorname"]) && $_POST["vorname"] != "" && isset($_POST["name"])
     $res_konto = mysqli_query($con, $sql_konto);
     $dsatz_konto = mysqli_fetch_assoc($res_konto);
     mysqli_close($con);
+    
     $_SESSION['status'] = $dsatz_konto['status'];
 
 	if($dsatz["rechte"] == 0){

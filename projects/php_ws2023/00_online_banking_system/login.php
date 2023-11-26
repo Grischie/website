@@ -35,6 +35,7 @@ if (isset($_POST["name"]) && $_POST["name"] == $dsatz["name"] && $_POST["passwor
     $res_konto = mysqli_query($con, $sql_konto);
     $dsatz_konto = mysqli_fetch_assoc($res_konto);
 	mysqli_close($con);
+	
     $_SESSION['status'] = $dsatz_konto['status'];
 
 	if($dsatz["rechte"] == 0){
