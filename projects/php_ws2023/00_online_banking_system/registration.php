@@ -59,7 +59,7 @@ if (isset($_POST["vorname"]) && $_POST["vorname"] != "" && isset($_POST["name"])
     mysqli_query($con, $sql_new);
 
     //Neue Daten anbinden in Konto Datenbank
-    $sql_new = "insert into User (kontonummer, status) values "
+    $sql_new = "insert into Konto (kontonummer, status) values "
         . "('" 
         . $new_kn . "', '"
         . $_POST["kapital"] ."'"
