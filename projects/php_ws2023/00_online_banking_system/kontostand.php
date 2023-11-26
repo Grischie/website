@@ -13,14 +13,14 @@
         $dsatz_konto = mysqli_fetch_assoc($res_konto);
         $_SESSION['status'] = $dsatz_konto['status'];
 
-        /*
+        
         //Überweisung
         $sql_hist = "select kontonummer_s, betrag, kontonummer_b, kommentar from Transaktionen";
         $sql_hist .= ' where kontonummer_s = "'. $_SESSION["kontonummer"] .'"';
-        $res_hist = mysqli_query($con, $sql_send);
+        $res_hist = mysqli_query($con, $sql_hist);
 
         $num = mysqli_num_rows($res_hist);
-        */
+        
 ?>  
 <!DOCTYPE html>
 <html>
