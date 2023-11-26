@@ -34,7 +34,7 @@ if (isset($_POST["vorname"]) && $_POST["vorname"] != "" && isset($_POST["name"])
     $sql_max = "select max(kontonummer) from User";
     $res_max = mysqli_query($con, $sql_max);
     $max_kn = mysqli_fetch_assoc($res_max);	
-    $max_kn = intval($max_kn["Kontonummer"]);
+    $max_kn = $max_kn["max(kontonummer)"];
     $new_kn = $max_kn + 1;
 
     //Art des Konto definieren
@@ -46,7 +46,7 @@ if (isset($_POST["vorname"]) && $_POST["vorname"] != "" && isset($_POST["name"])
     }
 
     //Neue Daten anbinden in User Datenbank
-    /*
+    
     $sql_new = "insert into User (name, vorname, mail, password, geburtstag, kontonummer, rechte) values "
         . "('" 
         . $_POST["name"] . "', '"
@@ -58,7 +58,7 @@ if (isset($_POST["vorname"]) && $_POST["vorname"] != "" && isset($_POST["name"])
         . $rechte . "'"
         .")";
     mysqli_query($con, $sql_new);
-    */
+   
     //Neue Daten anbinden in Konto Datenbank
     $sql_new = "insert into Konto (kontonummer, status, verlauf) values "
         . "('" 
