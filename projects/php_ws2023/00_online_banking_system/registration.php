@@ -45,6 +45,7 @@ if (isset($_POST["vorname"]) && $_POST["vorname"] != "" && isset($_POST["name"])
     }
 
     //Neue Daten anbinden in User Datenbank
+    /*
     $sql_new = "insert into User (name, vorname, mail, password, geburtstag, kontonummer, rechte) values "
         . "('" 
         . $_POST["name"] . "', '"
@@ -65,7 +66,7 @@ if (isset($_POST["vorname"]) && $_POST["vorname"] != "" && isset($_POST["name"])
         .")";
 
     mysqli_query($con, $sql_new);
-
+    */
     $_SESSION["name"] = $_POST["name"]; 
 	$_SESSION["login"] = "ok";
     $_SESSION["rechte"] = $rechte;
