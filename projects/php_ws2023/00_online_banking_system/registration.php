@@ -71,9 +71,9 @@ if (isset($_POST["vorname"]) && $_POST["vorname"] != "" && isset($_POST["name"])
 	$_SESSION["login"] = "ok";
     $_SESSION["rechte"] = $rechte;
     $_SESSION["kontonummer"] = str_pad((string)$new_kn, 5, '0', STR_PAD_LEFT);
-    
+
     $sql_konto = "select status from Konto";
-    $sql_konto .= ' where kontonummer = "'. $_SESSION["kontonummer"] .'"';
+    $sql_konto .= ' where kontonummer = "'. intval($_SESSION["kontonummer"]) .'"';
     $res_konto = mysqli_query($con, $sql_konto);
     $dsatz_konto = mysqli_fetch_assoc($res_konto);
     $_SESSION['status'] = $dsatz_konto['status'];

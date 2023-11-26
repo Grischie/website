@@ -31,7 +31,7 @@ if (isset($_POST["name"]) && $_POST["name"] == $dsatz["name"] && $_POST["passwor
 	$_SESSION["kontonummer"] = str_pad((string)$dsatz["kontonummer"], 5, '0', STR_PAD_LEFT);
 
 	$sql_konto = "select status from Konto";
-    $sql_konto .= ' where kontonummer = "'. $_SESSION["kontonummer"] .'"';
+    $sql_konto .= ' where kontonummer = "'. intval($_SESSION["kontonummer"]) .'"';
     $res_konto = mysqli_query($con, $sql_konto);
     $dsatz_konto = mysqli_fetch_assoc($res_konto);
     $_SESSION['status'] = $dsatz_konto['status'];
