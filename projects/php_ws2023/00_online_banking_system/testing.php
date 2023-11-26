@@ -12,9 +12,19 @@ $con = mysqli_connect("localhost", "root", $ps, "online_banking");
 $sql_max = "select max(kontonummer) from User";
 $res_max = mysqli_query($con, $sql_max);
 $max_kn = mysqli_fetch_assoc($res_max);	
+$num = mysqli_num_rows($res_max);
 echo $max_kn;
+echo "<br />";
+
 $max_kn = $max_kn["Kontonummer"];
 echo $max_kn;
+echo "<br />";
+
 $new_kn = $max_kn + 1;
+echo "<br />";
+
 echo $max_kn;
+echo "<br />";
+echo "<br />";
+echo $num
 ?>
