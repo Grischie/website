@@ -53,7 +53,7 @@ if (isset($_POST["vorname"]) && $_POST["vorname"] != "" && isset($_POST["name"])
         . $_POST["vorname"] . "', '"
         . $_POST["mail"] . "', '"
         . $_POST["passwort_1"] . "', '"
-        . $_POST["geburtstag"] . "', '"
+        . date('Y-m-d', strtotime($_POST["geburtstag"])) . "', '"
         . $new_kn . "', '"
         . $rechte . "'"
         .")";
