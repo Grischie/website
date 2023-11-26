@@ -67,17 +67,17 @@ if (isset($_POST["vorname"]) && $_POST["vorname"] != "" && isset($_POST["name"])
         . "" ."'"
         .")";
     mysqli_query($con, $sql_new);
-  
+    mysqli_close($con);
     $_SESSION["name"] = $_POST["name"]; 
 	$_SESSION["login"] = "ok";
     $_SESSION["rechte"] = $rechte;
 	if($dsatz["rechte"] == 0){
-		header("Location: willkommen_kreditanbietende.php");
+		header("Location: kreditanbietender.php");
 	} else {
-		header("Location: willkommen_nachfragende.php");
+		header("Location: nachfragender.php");
 	}
 	exit;
-} else {
+}  else {
 	header("Location: start_registration.php?f=4"); 
     exit;
 } 

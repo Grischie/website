@@ -2,7 +2,7 @@
 	session_start();
 	if (isset($_SESSION["login"]) && $_SESSION["login"] == "ok") {
 		if ($_SESSION["rechte"] != 0){
-			header("Location: willkommen_nachfragende.php");
+			header("Location: nachfragender.php");
 			exit;
 		}
 ?>
@@ -10,13 +10,16 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Kreditanbietende</title>
+	<title>Kreditanbietender</title>
 </head>
 <body>
 	<?php
 		echo "<h1>Hallo {$_SESSION['name']}</h1>";
 	?>
-	<p>Hier stehen viele weitere interessante Informationen</p>
+	<p><a href="kontostand.php">Kontostand</p>
+	<p><a href="geld_senden.php">Geld überweisen</p>
+	<p><a href="kredit_ausschreiben.php">Kredite ausschreiben</p>
+	<p><a href="kreditanfragen.php">Kreditanfragen</p>
 	<p><a href="logout.php">Ausloggen</p>
 </body>
 </html>

@@ -2,7 +2,7 @@
 	session_start();
 	if (isset($_SESSION["login"]) && $_SESSION["login"] == "ok") {
 		if ($_SESSION["rechte"] != 1){
-			header("Location: willkommen_kreditanbietende.php");
+			header("Location: kreditanbietender.php");
 			exit;
 		}
 ?>
@@ -10,7 +10,7 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Nachfragende</title>
+	<title>Nachfragender</title>
 </head>
 <body>
 	<?php

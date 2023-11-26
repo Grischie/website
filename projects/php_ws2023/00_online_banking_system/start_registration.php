@@ -2,10 +2,10 @@
 session_start();
 if (isset($_SESSION["login"]) && $_SESSION["login"] == "ok") {
 	if ($_SESSION["rechte"] == 1){
-		header("Location: willkommen_nachfragende.php");
+		header("Location: nachfragender.php");
 		exit;
 	} elseif ($_SESSION["rechte"] == 0){
-		header("Location: willkommen_kreditanbietende.php");
+		header("Location: kreditanbietender.php");
 		exit;
 	}
 }
