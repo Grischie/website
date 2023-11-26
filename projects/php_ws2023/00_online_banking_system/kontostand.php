@@ -34,7 +34,8 @@
 	?>
     <h2>Verlauf</h2>
     <p>
-    <?php
+    <?php 
+        /*
         if ($num == 0){
             echo "Keinen Verlauf gefunden"; 
         } else {
@@ -47,6 +48,7 @@
             }
         }
        mysqli_close($con);
+       */
 	?>
     </p>
 	<p><a href="kreditanbietender.php">Zurück</p>
