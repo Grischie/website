@@ -14,7 +14,7 @@
         $_SESSION['status'] = $dsatz_konto['status'];
 
         //Überweisung
-        $sql_hist = "select * from Konto";
+        $sql_hist = "select * from Transaktionen";
         $sql_hist .= ' where kontonummer_s = "'. $_SESSION["kontonummer"] .'"';
         $res_hist = mysqli_query($con, $sql_send);
 
