@@ -66,7 +66,7 @@ if (isset($_POST["vorname"]) && $_POST["vorname"] != "" && isset($_POST["name"])
         . $_POST["kapital"] ."'"
         .")";
     mysqli_query($con, $sql_new);
-    mysqli_close($con);
+    
     $_SESSION["name"] = $_POST["name"]; 
 	$_SESSION["login"] = "ok";
     $_SESSION["rechte"] = $rechte;
@@ -76,6 +76,7 @@ if (isset($_POST["vorname"]) && $_POST["vorname"] != "" && isset($_POST["name"])
     $sql_konto .= ' where kontonummer = "'. intval($_SESSION["kontonummer"]) .'"';
     $res_konto = mysqli_query($con, $sql_konto);
     $dsatz_konto = mysqli_fetch_assoc($res_konto);
+    mysqli_close($con);
     $_SESSION['status'] = $dsatz_konto['status'];
 
 	if($dsatz["rechte"] == 0){

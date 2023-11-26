@@ -22,7 +22,7 @@ if ($num == 0){
 }
 //Datensatz holen
 $dsatz = mysqli_fetch_assoc($res);	
-mysqli_close($con);
+
 //Prüfen ob die eingegebnen Daten korrekt sind
 if (isset($_POST["name"]) && $_POST["name"] == $dsatz["name"] && $_POST["passwort"] == $dsatz["password"]) {
 	$_SESSION["name"] = $_POST["name"]; 
@@ -34,6 +34,7 @@ if (isset($_POST["name"]) && $_POST["name"] == $dsatz["name"] && $_POST["passwor
     $sql_konto .= ' where kontonummer = "'. intval($_SESSION["kontonummer"]) .'"';
     $res_konto = mysqli_query($con, $sql_konto);
     $dsatz_konto = mysqli_fetch_assoc($res_konto);
+	mysqli_close($con);
     $_SESSION['status'] = $dsatz_konto['status'];
 
 	if($dsatz["rechte"] == 0){
