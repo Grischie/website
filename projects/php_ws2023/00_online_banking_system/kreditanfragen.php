@@ -28,7 +28,7 @@
         $con = mysqli_connect("localhost", "root", $ps, "online_banking");
         
         $sql = "select name, vorname, kontonummer from User";
-        $sql .= ' where rechte = "1"';
+        $sql .= ' where rechte = "0"';
 
         $res = mysqli_query($con, $sql);
         echo "<table border='1'>";
