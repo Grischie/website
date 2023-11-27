@@ -5,13 +5,20 @@ include('password.inc.php');
 
 
 if (isset($_POST["auswahl"])){
-
-	$sql = "update Kredite set status = 'angefragt" 
+    $con = mysqli_connect("localhost", "root", $ps, "online_banking");
+	
+    $sql_1 = "update Kredite set nachfragender = '".$_SESSION["kontonummer"] 
     ."' where id = '"
     . $_POST["auswahl"]
     ."'";
 
-	mysqli_query($con, $sql_new);
+    $sql_2 = "update Kredite set status = 'angefragt" 
+    ."' where id = '"
+    . $_POST["auswahl"]
+    ."'";
+    
+	mysqli_query($con, $sql_1);
+    mysqli_query($con, $sql_2);
 	mysqli_close($con);
 	header("Location: kreditangebote.php?f=2"); 
 	exit;
