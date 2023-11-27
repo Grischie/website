@@ -27,9 +27,9 @@
 
         $con = mysqli_connect("localhost", "root", $ps, "online_banking");
         
-        $sql = "select nachfragender, betrag, kondition, status from Kredite";
+        $sql = "select nachfragender, betrag, kondition from Kredite";
         $sql .= ' where kreditanbieter = "'. $_SESSION["kontonummer"] .'"';
-        
+        $sql .= ' and status = "angefragt"';
         $res = mysqli_query($con, $sql);
         echo "<table border='1'>";
         echo "<tr> <td>Nachfrager</td><td>Betrag</td><td>Kondition</td><td>Status</td>";
@@ -38,7 +38,6 @@
             echo "<td>" . str_pad((string)$dsatz["nachfragender"], 5, '0', STR_PAD_LEFT) . "</td>";
             echo "<td>" . $dsatz["betrag"] . "€</td>";
             echo "<td>" . $dsatz["konditon"] . "</td>";
-            echo "<td>" . $dsatz["status"] . "</td>";
             echo "</tr>";
         }
         echo "</table>";
