@@ -21,7 +21,7 @@
 	<?php
 		echo "<h2>Kontonummer: {$_SESSION['kontonummer']}<br />Kontostand: {$_SESSION['status']}€";
 	?>
-    <h2>Kredit Liste</h2>
+    <h2>Kreditliste</h2>
     <?php 
 		include('password.inc.php');	
 
