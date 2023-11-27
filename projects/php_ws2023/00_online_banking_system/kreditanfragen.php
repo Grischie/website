@@ -73,7 +73,7 @@
 			echo "<p class='ok'>Anfrage erfolgreich</p>";
 		}
     ?>
-	<p><a href="kreditanbietender.php">Zurück</p>
+	<p><a href="nachfragender.php">Zurück</p>
 </body>
 </html>
 <?php
