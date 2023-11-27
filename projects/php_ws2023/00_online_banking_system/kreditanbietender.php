@@ -19,7 +19,7 @@
 	<p><a href="kontostand.php">Kontostand</p>
 	<p><a href="geld_senden.php">Geld überweisen</p>
 	<p><a href="kredit_ausschreiben.php">Kredite ausschreiben</p>
-	<p><a href="kreditanfragen.php">Kreditanfragen</p>
+	<p><a href="kreditanfragen_liste.php">Kreditanfragen</p>
 	<p><a href="logout.php">Ausloggen</p>
 </body>
 </html>

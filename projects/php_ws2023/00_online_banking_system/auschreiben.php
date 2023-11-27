@@ -16,13 +16,14 @@ if (isset($_POST["betrag"]) && $_POST["betrag"] != "" && $_POST["kondition"] != 
 		exit;
 	}
 
-	$sql_new = "insert into Kredite (kreditanbieter, nachfragender, betrag, kondition, status) values "
+	$sql_new = "insert into Kredite (kreditanbieter, nachfragender, betrag, kondition, status, kommentar) values "
 	. "('" 
 	. $_SESSION["kontonummer"] . "', '"
     . "0" . "', '"
 	. $_POST["betrag"] . "', '"
 	. $_POST["kondition"] . "', '"
-	. "ausgeschrieben"."'"
+    . "ausgeschrieben" . "', '"
+	. ""."'"
 	.")";
 
 	mysqli_query($con, $sql_new);

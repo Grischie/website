@@ -1,8 +1,8 @@
 <?php
 	session_start();
 	if (isset($_SESSION["login"]) && $_SESSION["login"] == "ok") {
-        if ($_SESSION["rechte"] != 1){
-			header("Location: kreditanbietender.php");
+        if ($_SESSION["rechte"] != 0){
+			header("Location: nachfragender.php");
 			exit;
 		}
 ?>  
@@ -10,32 +10,32 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Bearbeitungsstand</title>
+	<title>Kreditanfragen</title>
     <style>
 		.fehler { color: red; }
         .ok { color: green; }
 	</style>
 </head>
 <body>
-    <h1>Bearbeitungsstand</h1>
+    <h1>Kreditanfragen</h1>
 	<?php
 		echo "<h2>Kontonummer: {$_SESSION['kontonummer']}<br />Kontostand: {$_SESSION['status']}€";
 	?>
-    <h2>Kredit Liste</h2>
+    <h2>Kreditanfragen Liste</h2>
     <?php 
 		include('password.inc.php');	
 
         $con = mysqli_connect("localhost", "root", $ps, "online_banking");
         
-        $sql = "select kreditanbieter, betrag, kondition, status from Kredite";
-        $sql .= ' where nachfragender = "'. $_SESSION["kontonummer"] .'"';
-
+        $sql = "select nachfragender, betrag, kondition, status from Kredite";
+        $sql .= ' where kreditanbieter = "'. $_SESSION["kontonummer"] .'"';
+        
         $res = mysqli_query($con, $sql);
         echo "<table border='1'>";
-        echo "<tr> <td>Kreditor</td><td>Betrag</td><td>Kondition</td><td>Status</td>";
+        echo "<tr> <td>Nachfrager</td><td>Betrag</td><td>Kondition</td><td>Status</td>";
         while ($dsatz = mysqli_fetch_assoc($res)){
             echo "<tr>";
-            echo "<td>" . str_pad((string)$dsatz["kreditanbieter"], 5, '0', STR_PAD_LEFT) . "</td>";
+            echo "<td>" . str_pad((string)$dsatz["nachfragender"], 5, '0', STR_PAD_LEFT) . "</td>";
             echo "<td>" . $dsatz["betrag"] . "€</td>";
             echo "<td>" . $dsatz["konditon"] . "</td>";
             echo "<td>" . $dsatz["status"] . "</td>";
@@ -44,7 +44,7 @@
         echo "</table>";
         mysqli_close($con);
 	?>
-	<p><a href="nachfragender.php">Zurück</p>
+	<p><a href="kreditanbietender.php">Zurück</p>
 </body>
 </html>
 <?php

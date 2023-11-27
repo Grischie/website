@@ -12,7 +12,8 @@ if (isset($_POST["kontonummer"]) && $_POST["kontonummer"] != "" && $_POST["betra
     . $_SESSION["kontonummer"] . "', '"
 	. $_POST["betrag"] . "', '"
 	. $_POST["kondition"] . "', '"
-	. "angefragt"."'"
+    . "angefragt" . "', '"
+	. ""."'"
 	.")";
 
 	mysqli_query($con, $sql_new);
