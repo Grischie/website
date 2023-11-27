@@ -41,7 +41,7 @@
             echo "</tr>";
             }
         echo "</table>";
-        mysqli_close($con);
+        
 	?>
     <h2>Anfragen</h2>
     <?php 
@@ -58,6 +58,7 @@
                 echo '<option value="'.$dsatz["kontonummer"] .'">Volvo</option>';
             }
             echo "</select>";
+            mysqli_close($con);
         ?>
 		<br /><br />
 		Betrag: <br />
