@@ -22,6 +22,7 @@
 		echo "<h2>Kontonummer: {$_SESSION['kontonummer']}<br />Kontostand: {$_SESSION['status']}€";
 	?>
     <h2>Kreditanfragen Liste</h2>
+    <form action="liste_bearbeiten.php" method="post" >
     <?php 
 		include('password.inc.php');	
 
@@ -32,17 +33,23 @@
         $sql .= ' and status = "angefragt"';
         $res = mysqli_query($con, $sql);
         echo "<table border='1'>";
-        echo "<tr> <td>Nachfrager</td><td>Betrag</td><td>Kondition</td>";
+        echo "<tr> <td>Nachfrager</td><td>Betrag</td><td>Kondition</td><td>Auswahl</td>";
         while ($dsatz = mysqli_fetch_assoc($res)){
             echo "<tr>";
             echo "<td>" . str_pad((string)$dsatz["nachfragender"], 5, '0', STR_PAD_LEFT) . "</td>";
             echo "<td>" . $dsatz["betrag"] . "€</td>";
             echo "<td>" . $dsatz["kondition"] . "</td>";
+            echo "<td><input type='radio' name='auswahl'";
             echo "</tr>";
         }
-        echo "</table>";
+        echo "</table><br />";
+        echo "Grund:";
+        echo "<input type='test' name='Grund' size='20' />";
+        echo "<input type='submit' name='action' value='Annhemen'/>";
+        echo "<input type='submit' name='action' value='Ablehnen' /><br />";
         mysqli_close($con);
 	?>
+    </form>
 	<p><a href="kreditanbietender.php">Zurück</p>
 </body>
 </html>
