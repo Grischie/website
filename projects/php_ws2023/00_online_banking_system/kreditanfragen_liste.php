@@ -32,7 +32,7 @@
         $sql .= ' and status = "angefragt"';
         $res = mysqli_query($con, $sql);
         echo "<table border='1'>";
-        echo "<tr> <td>Nachfrager</td><td>Betrag</td><td>Kondition</td><td>Status</td>";
+        echo "<tr> <td>Nachfrager</td><td>Betrag</td><td>Kondition</td>";
         while ($dsatz = mysqli_fetch_assoc($res)){
             echo "<tr>";
             echo "<td>" . str_pad((string)$dsatz["nachfragender"], 5, '0', STR_PAD_LEFT) . "</td>";
