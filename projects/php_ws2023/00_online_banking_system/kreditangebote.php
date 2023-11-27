@@ -10,24 +10,25 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Kreditanfragen</title>
+	<title>Kreditangebote</title>
     <style>
 		.fehler { color: red; }
         .ok { color: green; }
 	</style>
 </head>
 <body>
-    <h1>Kreditanfragen</h1>
+    <h1>Kreditangebote</h1>
 	<?php
 		echo "<h2>Kontonummer: {$_SESSION['kontonummer']}<br />Kontostand: {$_SESSION['status']}€";
 	?>
-    <h2>Kreditanfragen Liste</h2>
+    <h2>Kreditliste</h2>
+    <form action="anfrage_n.php" method="post" >
     <?php 
 		include('password.inc.php');	
 
         $con = mysqli_connect("localhost", "root", $ps, "online_banking");
         
-        $sql = "select kreditanbieter, betrag, kondition from Kredite";
+        $sql = "select id, kreditanbieter, betrag, kondition from Kredite";
         $sql .= ' where nachfragender = "0"';
         $sql .= ' and status = "ausgeschrieben"';
         $res = mysqli_query($con, $sql);
@@ -38,10 +39,17 @@
             echo "<td>" . str_pad((string)$dsatz["kreditanbieter"], 5, '0', STR_PAD_LEFT) . "</td>";
             echo "<td>" . $dsatz["betrag"] . "€</td>";
             echo "<td>" . $dsatz["kondition"] . "</td>";
+            echo "<td><input type='radio' name='auswahl' value='". $dsatz["id"] . "'";
             echo "</tr>";
         }
         echo "</table>";
         mysqli_close($con);
+        echo "<input type='submit' value='Beantragen'/>";
+        if (isset($_GET["f"]) && $_GET["f"] == 2) {
+			echo "<p class='ok'>Erfolgreich beantragt</p>";
+		} elseif (isset($_GET["f"]) && $_GET["f"] == 1) {
+			echo "<p class='fehler'>Bitte ein Kredit auswählen</p>";
+		} 
 	?>
 	<p><a href="nachfragender.php">Zurück</p>
 </body>
