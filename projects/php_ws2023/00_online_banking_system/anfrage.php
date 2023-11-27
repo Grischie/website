@@ -17,10 +17,10 @@ if (isset($_POST["kontonummer"]) && $_POST["kontonummer"] != "" && $_POST["betra
 
 	mysqli_query($con, $sql_new);
 	mysqli_close($con);
-	header("Location: kredit_ausschreiben.php?f=2"); 
+	header("Location: kreditanbietender.php?f=2"); 
 	exit;
 } else {
-	header("Location: kredit_ausschreiben.php?f=1"); 
+	header("Location: kreditanbietender.php?f=1"); 
 exit;
 } 
 ?>
