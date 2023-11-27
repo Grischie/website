@@ -28,7 +28,7 @@
 
         $con = mysqli_connect("localhost", "root", $ps, "online_banking");
         
-        $sql = "select nachfragender, betrag, kondition from Kredite";
+        $sql = "select id, nachfragender, betrag, kondition from Kredite";
         $sql .= ' where kreditanbieter = "'. $_SESSION["kontonummer"] .'"';
         $sql .= ' and status = "angefragt"';
         $res = mysqli_query($con, $sql);
@@ -39,12 +39,12 @@
             echo "<td>" . str_pad((string)$dsatz["nachfragender"], 5, '0', STR_PAD_LEFT) . "</td>";
             echo "<td>" . $dsatz["betrag"] . "€</td>";
             echo "<td>" . $dsatz["kondition"] . "</td>";
-            echo "<td><input type='radio' name='auswahl'";
+            echo "<td><input type='radio' name='auswahl' value='". $dsatz["id"] . "'";
             echo "</tr>";
         }
         echo "</table><br />";
         echo "Grund:";
-        echo "<input type='test' name='Grund' size='20' />";
+        echo "<input type='test' name='grund' size='20' /><br />";
         echo "<input type='submit' name='action' value='Annhemen'/>";
         echo "<input type='submit' name='action' value='Ablehnen' /><br />";
         mysqli_close($con);

@@ -3,11 +3,17 @@ session_start();
 include('password.inc.php');	
 
 $con = mysqli_connect("localhost", "root", $ps, "online_banking");
+$sql_max = "select max(id) from Kredite";
+$res_max = mysqli_query($con, $sql_max);
+$id = mysqli_fetch_assoc($res_max);	
+$id = intval($id["max(id)"]);
+$id = $id + 1;
 
 if (isset($_POST["kontonummer"]) && $_POST["kontonummer"] != "" && $_POST["betrag"] != "" && $_POST["kondition"] != "") {
 
-	$sql_new = "insert into Kredite (kreditanbieter, nachfragender, betrag, kondition, status) values "
+	$sql_new = "insert into Kredite (id, kreditanbieter, nachfragender, betrag, kondition, status) values "
 	. "('" 
+	. $id. "', '"
 	. $_POST["kontonummer"] . "', '"
     . $_SESSION["kontonummer"] . "', '"
 	. $_POST["betrag"] . "', '"
