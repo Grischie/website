@@ -1,7 +1,6 @@
 <?php
 session_start(); 
 include('password.inc.php');	
-echo $_POST["auswahl"];
 $con = mysqli_connect("localhost", "root", $ps, "online_banking");
 $sql = "select nachfragender, betrag from Kredite";
 $sql .= " where id = '". $_POST["auswahl"] ."'";

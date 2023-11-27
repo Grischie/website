@@ -51,9 +51,9 @@
 
 		if (isset($_GET["f"]) && $_GET["f"] == 2) {
 			echo "<p class='fehler'>Nicht genügende Geld</p>";
-		} elseif (isset($_GET["f"]) && $_GET["f"] == 3) {
+		} elseif (isset($_GET["f"]) && $_GET["f"] == 1) {
 			echo "<p class='fehler'>Bitte ein Kredit auswählen</p>";
-		} elseif (isset($_GET["f"]) && $_GET["f"] == 2) {
+		} elseif (isset($_GET["f"]) && $_GET["f"] == 3) {
 			echo "<p class='ok'>Kredit erfolgreich bearbeitet</p>";
 		} 
 	?>
