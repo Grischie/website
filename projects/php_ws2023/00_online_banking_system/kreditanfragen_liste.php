@@ -45,7 +45,7 @@
         echo "</table><br />";
         echo "Grund:";
         echo "<input type='test' name='grund' size='20' /><br />";
-        echo "<input type='submit' name='action' value='Annhemen'/>";
+        echo "<input type='submit' name='action' value='Annehmen'/>";
         echo "<input type='submit' name='action' value='Ablehnen' /><br />";
         mysqli_close($con);
 	?>
