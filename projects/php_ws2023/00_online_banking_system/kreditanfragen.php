@@ -41,7 +41,6 @@
             echo "</tr>";
             }
         echo "</table>";
-        
 	?>
     <h2>Anfragen</h2>
     <?php 
@@ -53,9 +52,9 @@
     <form action="anfrage.php" method="post" >
         Kontonummer: <br />
         <?php
-            echo '<select  name="kontonummer">';
+            echo '<select name="kontonummer">';
             while ($dsatz = mysqli_fetch_assoc($res)){
-                echo '<option value="'.$dsatz["kontonummer"] .'">Volvo</option>';
+                echo '<option value="'.$dsatz["kontonummer"] .'">'.$dsatz["kontonummer"] . '</option>';
             }
             echo "</select>";
             mysqli_close($con);
