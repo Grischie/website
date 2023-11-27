@@ -33,7 +33,7 @@
         $sql .= ' and status = "ausgeschrieben"';
         $res = mysqli_query($con, $sql);
         echo "<table border='1'>";
-        echo "<tr> <td>Kreditor</td><td>Betrag</td><td>Kondition</td>";
+        echo "<tr> <td>Kreditor</td><td>Betrag</td><td>Kondition</td><td>Auswahl</td>";
         while ($dsatz = mysqli_fetch_assoc($res)){
             echo "<tr>";
             echo "<td>" . str_pad((string)$dsatz["kreditanbieter"], 5, '0', STR_PAD_LEFT) . "</td>";
