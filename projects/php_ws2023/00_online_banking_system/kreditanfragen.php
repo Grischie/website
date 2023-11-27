@@ -51,8 +51,15 @@
 	?>
     <p>
     <form action="anfrage.php" method="post" >
-		Kontonummer: <br />
-		<input type="number" name="kontonummer" size="20" /><br /><br />
+        Kontonummer: <br />
+        <?php
+            echo '<select  name="kontonummer">';
+            while ($dsatz = mysqli_fetch_assoc($res)){
+                echo '<option value="'.$dsatz["kontonummer"] .'">Volvo</option>';
+            }
+            echo "</select>";
+        ?>
+		<br /><br />
 		Betrag: <br />
 		<input type="number" name="betrag"size="20" /><br /><br />
         Kondition: <br />
