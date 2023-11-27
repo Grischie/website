@@ -11,9 +11,9 @@ $id = $id + 1;
 
 if (isset($_POST["kontonummer"]) && $_POST["kontonummer"] != "" && $_POST["betrag"] != "" && $_POST["kondition"] != "") {
 
-	$sql_new = "insert into Kredite (id, kreditanbieter, nachfragender, betrag, kondition, status) values "
+	$sql_new = "insert into Kredite (id, kreditanbieter, nachfragender, betrag, kondition, status, kommentar) values "
 	. "('" 
-	. $id. "', '"
+	. $id . "', '"
 	. $_POST["kontonummer"] . "', '"
     . $_SESSION["kontonummer"] . "', '"
 	. $_POST["betrag"] . "', '"

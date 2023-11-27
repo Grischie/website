@@ -48,6 +48,14 @@
         echo "<input type='submit' name='action' value='Annehmen'/>";
         echo "<input type='submit' name='action' value='Ablehnen' /><br />";
         mysqli_close($con);
+
+		if (isset($_GET["f"]) && $_GET["f"] == 2) {
+			echo "<p class='fehler'>Nicht genügende Geld</p>";
+		} elseif (isset($_GET["f"]) && $_GET["f"] == 3) {
+			echo "<p class='fehler'>Bitte ein Kredit auswählen</p>";
+		} elseif (isset($_GET["f"]) && $_GET["f"] == 2) {
+			echo "<p class='ok'>Kredit erfolgreich bearbeitet</p>";
+		} 
 	?>
     </form>
 	<p><a href="kreditanbietender.php">Zurück</p>
