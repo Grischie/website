@@ -52,6 +52,7 @@
     <form action="anfrage.php" method="post" >
         Kontonummer: <br />
         <?php
+            $res = mysqli_query($con, $sql);
             echo '<select name="kontonummer">';
             while ($dsatz = mysqli_fetch_assoc($res)){
                 echo '<option value="'.$dsatz["kontonummer"] .'">'.$dsatz["kontonummer"] . '</option>';
