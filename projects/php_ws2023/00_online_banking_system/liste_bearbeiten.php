@@ -16,10 +16,10 @@ if (isset($_POST["auswahl"])){
         $dsatz_konto = intval(mysqli_fetch_assoc($res_konto)["status"]);
 
         $sql_ziel = "select status from Konto";
-        $sql_ziel .= ' where kontonummer = "'. intval($dsatz["nachfragender"]) .'"';
+        $sql_ziel .= ' where kontonummer = "'. $dsatz["nachfragender"] .'"';
         $res_ziel = mysqli_query($con, $res_ziel);
         $dsatz_ziel = intval(mysqli_fetch_assoc($res_ziel)["status"]);
-        
+
         if ($dsatz_konto < intval($dsatz["betrag"])){
             header("Location: kreditanfragen_liste.php?f=2");
             exit;
