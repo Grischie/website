@@ -37,7 +37,7 @@
             echo "<tr>";
             echo "<td>" . str_pad((string)$dsatz["kreditanbieter"], 5, '0', STR_PAD_LEFT) . "</td>";
             echo "<td>" . $dsatz["betrag"] . "€</td>";
-            echo "<td>" . $dsatz["konditon"] . "</td>";
+            echo "<td>" . $dsatz["kondition"] . "</td>";
             echo "</tr>";
         }
         echo "</table>";
