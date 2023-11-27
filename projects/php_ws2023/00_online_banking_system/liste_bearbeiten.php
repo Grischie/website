@@ -17,7 +17,7 @@ if (isset($_POST["auswahl"])){
 
         $sql_ziel = "select status from Konto";
         $sql_ziel .= ' where kontonummer = "'. $dsatz["nachfragender"] .'"';
-        $res_ziel = mysqli_query($con, $res_ziel);
+        $res_ziel = mysqli_query($con, $sql_ziel);
         $dsatz_ziel = intval(mysqli_fetch_assoc($res_ziel)["status"]);
 
         if ($dsatz_konto < intval($dsatz["betrag"])){
