@@ -18,6 +18,9 @@
 	?>
 	<p><a href="kontostand.php">Kontostand</p>
 	<p><a href="geld_senden.php">Geld überweisen</p>
+	<p><a href="kreditanfragen.php">Kredit anfragen</p>
+	<p><a href="kreditangebote.php">Kreditangebote</p>
+	<p><a href="bearbeitungsstand.php">Bearbeitungsstand</p>
 	<p><a href="logout.php">Ausloggen</p>
 </body>
 </html>

@@ -1,12 +1,16 @@
 <?php
 	session_start();
 	if (isset($_SESSION["login"]) && $_SESSION["login"] == "ok") {
+        if ($_SESSION["rechte"] != 0){
+			header("Location: nachfragender.php");
+			exit;
+		}
 ?>  
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Geld Überweisung</title>
+	<title>Kredit Ausschreibung</title>
     <style>
 		.fehler { color: red; }
         .ok { color: green; }
@@ -14,34 +18,30 @@
 </head>
 <body>
     
-    <h1>Geld überweisen</h1>
+    <h1>Kredit ausschreiben</h1>
 	<?php
 		echo "<h2>Kontonummer: {$_SESSION['kontonummer']}<br />Kontostand: {$_SESSION['status']}€";
 	?>
-    <h2>Überweisung</h2>
+    <h2>Ausschreibung</h2>
     <?php 
 		if (isset($_GET["f"]) && $_GET["f"] == 1) {
 			echo "<p class='fehler'>Nicht genügent Geld</p>";
 		} elseif (isset($_GET["f"]) && $_GET["f"] == 2) {
-			echo "<p class='fehler'>Kontonummer nicht korrekt</p>";
-		} elseif (isset($_GET["f"]) && $_GET["f"] == 4) {
 			echo "<p class='fehler'>Nicht alles ausgefüllt</p>";
 		} 
 	?>
     <p>
-    <form action="send.php" method="post" >
-		Konto: <br />
-		<input type="number" name="kontonummer" size="20" /><br /><br />
+    <form action="auschreiben.php" method="post" >
 		Betrag: <br />
 		<input type="number" name="betrag"size="20" /><br /><br />
-        Zweck: <br />
-		<input type="text" name="kommentar"size="60" /><br /><br />
-		<input type="submit" value="überweisen" />
+        Kondition: <br />
+		<input type="text" name="kondition"size="60" /><br /><br />
+		<input type="submit" value="Auschreiben" />
 	</form>
     </p>
     <?php
         if (isset($_GET["f"]) && $_GET["f"] == 3) {
-			echo "<p class='ok'>Überweisung erfolgreich</p>";
+			echo "<p class='ok'>Kredit Ausschreibung erfolgreich</p>";
 		}
     ?>
 	<p><a href="kreditanbietender.php">Zurück</p>
