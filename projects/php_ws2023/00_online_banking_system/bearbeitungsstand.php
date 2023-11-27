@@ -29,7 +29,7 @@
         
         $sql = "select kreditanbieter, betrag, konditon, status from Kredite";
         $sql .= ' where nachfragender = "'. $_SESSION["kontonummer"] .'"';
-
+        echo "test";
         $res = mysqli_query($con, $sql);
         echo "<table border='1'>";
         echo "<tr> <td>Kreditor</td><td>Betrag</td><td>Kondition</td><td>status</td>";
