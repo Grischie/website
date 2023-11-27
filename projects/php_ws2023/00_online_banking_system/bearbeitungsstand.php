@@ -32,11 +32,11 @@
 
         $res = mysqli_query($con, $sql);
         echo "<table border='1'>";
-        echo "<tr> <td>Kreditor</td><td>Betrag</td><td>Kondition</td><td>status</td>";
+        echo "<tr> <td>Kreditor</td><td>Betrag</td><td>Kondition</td><td>Status</td>";
         while ($dsatz = mysqli_fetch_assoc($res)){
             echo "<tr>";
             echo "<td>" . str_pad((string)$dsatz["kreditanbieter"], 5, '0', STR_PAD_LEFT) . "</td>";
-            echo "<td>" . $dsatz["betrag"] . "</td>";
+            echo "<td>" . $dsatz["betrag"] . "€</td>";
             echo "<td>" . $dsatz["konditon"] . "</td>";
             echo "<td>" . $dsatz["status"] . "</td>";
             echo "</tr>";
