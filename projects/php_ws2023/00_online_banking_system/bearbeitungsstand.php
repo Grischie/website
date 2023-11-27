@@ -27,18 +27,19 @@
 
         $con = mysqli_connect("localhost", "root", $ps, "online_banking");
         
-        $sql = "select kreditanbieter, betrag, kondition, status from Kredite";
+        $sql = "select kreditanbieter, betrag, kondition, status, kommentar from Kredite";
         $sql .= ' where nachfragender = "'. $_SESSION["kontonummer"] .'"';
 
         $res = mysqli_query($con, $sql);
         echo "<table border='1'>";
-        echo "<tr> <td>Kreditor</td><td>Betrag</td><td>Kondition</td><td>Status</td>";
+        echo "<tr> <td>Kreditor</td><td>Betrag</td><td>Kondition</td><td>Status</td><td>Grund</td>";
         while ($dsatz = mysqli_fetch_assoc($res)){
             echo "<tr>";
             echo "<td>" . str_pad((string)$dsatz["kreditanbieter"], 5, '0', STR_PAD_LEFT) . "</td>";
             echo "<td>" . $dsatz["betrag"] . "€</td>";
             echo "<td>" . $dsatz["kondition"] . "</td>";
             echo "<td>" . $dsatz["status"] . "</td>";
+            echo "<td>" . $dsatz["kommentar"] . "</td>";
             echo "</tr>";
         }
         echo "</table>";
