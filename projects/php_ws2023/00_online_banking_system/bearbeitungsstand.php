@@ -22,7 +22,6 @@
 		echo "<h2>Kontonummer: {$_SESSION['kontonummer']}<br />Kontostand: {$_SESSION['status']}€";
 	?>
     <h2>Kredit Liste</h2>
-    <p>
     <?php 
 		include('password.inc.php');	
 
@@ -43,8 +42,8 @@
             echo "</tr>";
         }
         echo "</table>";
+        mysqli_close($con);
 	?>
-    </p>
 	<p><a href="kreditanbietender.php">Zurück</p>
 </body>
 </html>
