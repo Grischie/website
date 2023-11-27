@@ -37,7 +37,7 @@
             echo "<tr>";
             echo "<td>" . $dsatz["name"] . "</td>";
             echo "<td>" . $dsatz["vorname"] . "</td>";
-            echo "<td>" . $dsatz["kontonummer"] . "</td>";
+            echo "<td>" . str_pad((string)$dsatz["kontonummer"], 5, '0', STR_PAD_LEFT) . "</td>";
             echo "</tr>";
             }
         echo "</table>";
@@ -55,7 +55,7 @@
             $res = mysqli_query($con, $sql);
             echo '<select name="kontonummer">';
             while ($dsatz = mysqli_fetch_assoc($res)){
-                echo '<option value="'.$dsatz["kontonummer"] .'">'.$dsatz["kontonummer"] . '</option>';
+                echo '<option value="'. str_pad((string)$dsatz["kontonummer"], 5, '0', STR_PAD_LEFT) .'">'. str_pad((string)$dsatz["kontonummer"], 5, '0', STR_PAD_LEFT) . '</option>';
             }
             echo "</select>";
             mysqli_close($con);
