@@ -5,8 +5,7 @@
 
         //Connection zur Dantenbank herstellen
         $con = mysqli_connect("localhost", "root", $ps, "online_banking");
-        
-        //Überweisung
+
         $sql_hist = "select kontonummer_s, betrag, kontonummer_b, kommentar from Transaktionen";
         $sql_hist .= ' where kontonummer_s = "'. $_SESSION["kontonummer"] .'"';
         $res_hist = mysqli_query($con, $sql_hist);
@@ -33,7 +32,7 @@
         } else {
             while ($dsatz_hist = mysqli_fetch_assoc($res_hist)){
                 $konto = str_pad((string)$dsatz_hist['kontonummer_b'], 5, '0', STR_PAD_LEFT);
-                echo  $konto . " || " . $dsatz_hist["betrag"] . "€<br />";
+                echo  $konto . "     ||     " . $dsatz_hist["betrag"] . "€     ||     ".$dsatz_hist["kommentar"]." <br />";
             }
         }
        mysqli_close($con);
