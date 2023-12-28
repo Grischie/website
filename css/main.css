@@ -9,6 +9,7 @@ body {
     cursor: default;
 }
 
+
 /* Header */
 
 header{
@@ -104,6 +105,7 @@ header{
  
 }
 
+
 /* Homepage */
 
 .wrapper {
@@ -123,6 +125,7 @@ header{
 	width: auto;
 	max-height: 595px;
 }
+
 
 /* Timeline */
 
@@ -257,6 +260,16 @@ header{
     left: 14px;
 }
 
+@-moz-document url-prefix() {
+    .up .content{
+        top: 0px;
+    }
+    .down .content{
+        top: 84px;
+    }
+  }
+  
+
 .date {
     margin-top: 5px; 
 }
@@ -304,7 +317,6 @@ header{
 @keyframes load {
     0% {
         transform: scaleX(0);
-
     }
     100%{
         transform: scaleX(1);
