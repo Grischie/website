@@ -8,6 +8,9 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
     cursor: default;
 }
+
+/* Header */
+
 header{
     position: fixed;
     top: 0;
@@ -23,6 +26,7 @@ header{
     backdrop-filter: blur(20px);
     box-shadow: 0 0 30px rgba(255, 255, 255, .5);
 }
+
 .icon-logo{
 	display: flex;
   	align-items: center;
@@ -45,7 +49,7 @@ header{
     margin-left: 35px;
     cursor: pointer;
 }
-.navigation a:not(.dropdown a)::after {
+.navigation a::after {
     content: '';
     position: absolute;
     left: 0;
@@ -57,7 +61,7 @@ header{
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
-.navigation a:not(.dropdown a):hover::after{
+.navigation a:hover::after{
     transform: scaleX(1);
 }
 
@@ -99,62 +103,8 @@ header{
     margin: 0;
  
 }
-.dropdown-content i:hover {
-    background-color: gray;
-}
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-.dropdown-content-2 {
-    display: none;
-    position: absolute;
-    min-width: 180px;
-    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
-    margin-left: -180px;
-    margin-top: -50px;
-    background: black;
-    z-index: 1;
-}
-li.hover:hover .dropdown-content-2 {
-    display: block;
-}
-.dropdown-content-3 {
-    display: none;
-    position: absolute;
-    min-width: 160px;
-    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
-    margin-left: -170px;
-    margin-top: -50px;
-    background: black;
-    z-index: 1;
-}
-li.hover-2:hover > .dropdown-content-3 {
-    display: block;
-}
-
-.dropdown-content-3 a {
-    position: relative;
-    font-size: 20px;
-    text-decoration: none;
-    font-weight: 300;
-    cursor: pointer;
-}
-.dropdown-content-3 a::after {
-    content: '';
-    position: absolute;
-    left: 10%;
-    bottom: 6px;
-    width: 80%;
-    height: 2px;
-    background: white;
-    border-radius: 5px;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-.dropdown-content-3 a:hover::after{
-    transform: scaleX(1);
-}
+/* Homepage */
 
 .wrapper {
     position: relative;
@@ -173,6 +123,9 @@ li.hover-2:hover > .dropdown-content-3 {
 	width: auto;
 	max-height: 595px;
 }
+
+/* Timeline */
+
 .timeline {
     position: relative;
     margin-right: 50px;
