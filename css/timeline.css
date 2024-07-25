@@ -1,0 +1,450 @@
+body {
+    position: relative; 
+    color: white;
+    background-color: black;
+    display: flex;
+    min-height: 100vh;
+    min-width: 100wh;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+    cursor: default;
+}
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../medien/images/Duales_Studium.jpg");
+    background-size: cover;
+    opacity: 0.5; 
+    mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 70%, transparent 100%);
+}
+.timeline {
+    z-index: 1;
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+.line {
+    position: absolute;
+    border-right: 5px solid white;
+    min-height: 100%;   
+    left: 40%;
+}
+.time_container{
+    position: absolute;
+    left: 23%;
+    top: 28%;
+    height: 50%;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+    text-shadow: 
+        -1px -1px 0px #000,
+         0px -1px 0px #000,
+         1px -1px 0px #000,
+        -1px  0px 0px #000,
+         1px  0px 0px #000,
+        -1px  1px 0px #000,
+         0px  1px 0px #000,
+         1px  1px 0px #000;
+
+}
+.time_main {
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+} 
+.time_2 {
+    display: flex;
+    align-items: center;
+    color: transparent;
+    text-shadow: 0px 0px 0px;
+}
+.time_1 {
+    display: flex;
+    align-items: center;
+    color: transparent;
+    text-shadow: 0px 0px 0px;
+}
+.time-1 {
+    display: flex;
+    align-items: center;
+}
+.time-2 {
+    display: flex;
+    align-items: center;
+}
+.dot_container{
+    position: absolute;
+    left: 40%;
+    top: 28%;
+    height: 50%;
+    width: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.dot_2 {
+    position:  relative;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+}
+.dot_1 {
+    position:  relative;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+}
+.dot-1 {
+    position:  relative;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+}
+.dot-2 {
+    position:  relative;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+}
+.dot-main {
+    position:  relative;
+    height: 36px;
+    width: 36px;
+    background-color: black;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+}
+.content {
+    position: absolute;
+    top: 13%;
+    left: 45%;
+    height: 80%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: right;
+    text-shadow: 
+        -1px -1px 0px #000,
+         0px -1px 0px #000,
+         1px -1px 0px #000,
+        -1px  0px 0px #000,
+         1px  0px 0px #000,
+        -1px  1px 0px #000,
+         0px  1px 0px #000,
+         1px  1px 0px #000,
+        -2px -2px 0px #000,
+        -1px -2px 0px #000,
+         0px -2px 0px #000,
+         1px -2px 0px #000,
+         2px -2px 0px #000,
+         2px -1px 0px #000,
+         2px  0px 0px #000,
+         2px  1px 0px #000,
+         2px  2px 0px #000,
+         1px  2px 0px #000,
+         0px  2px 0px #000,
+        -1px  2px 0px #000,
+        -2px  2px 0px #000,
+        -2px  1px 0px #000,
+        -2px  0px 0px #000,
+        -2px -1px 0px #000;
+    
+}
+.content h1 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+}
+.content p {
+    padding-top: 50px;
+    font-size: 1.5rem;
+    text-shadow: 0px 0px 0px;
+}
+.button-container {
+    padding-top: 50px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    cursor: pointer;
+}
+.button_back {
+    color: transparent;
+    text-shadow: 0px 0px 0px;
+}
+.button_next {
+    padding: 5px 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 12px;
+    text-shadow: 0px 0px 0px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+@media (max-width: 600px) {
+    .line {
+        border-right: 2px solid white;
+        left: 35%;
+    }
+    .time_container{
+        top: 18%;
+        height: 70%;
+        left: 15%;
+        width: 100px;
+        font-size: 0.5rem;
+        text-shadow: 
+        -1px -1px 0px #000,
+         0px -1px 0px #000,
+         1px -1px 0px #000,
+        -1px  0px 0px #000,
+         1px  0px 0px #000,
+        -1px  1px 0px #000,
+         0px  1px 0px #000,
+         1px  1px 0px #000;
+    }
+    .time_main {
+        font-size: 0.8rem;
+    } 
+    .dot_container{
+        top: 18%;
+        height: 70%;
+        left: 35%;
+        width: 2px;
+    }
+    .dot_2 {
+        height: 8px;
+        width: 8px;
+    }
+    .dot_1 {
+        height: 8px;
+        width: 8px;
+    }
+    .dot-1 {
+        height: 8px;
+        width: 8px;
+    }
+    .dot-2 {
+        height: 8px;
+        width: 8px;
+    }
+    .dot-main {
+        height: 14px;
+        width: 14px;
+    }
+    .content{
+        left: 40%;
+    }
+}
+@media (min-width: 601px) and (max-width: 900px) {
+    .line {
+        border-right: 3px solid white;
+        left: 35%;
+    }
+    .time_container{
+        top: 18%;
+        height: 70%;
+        left: 15%;
+        width: 130px;
+        font-size: 0.8rem;
+        text-shadow: 
+        -1px -1px 0px #000,
+         0px -1px 0px #000,
+         1px -1px 0px #000,
+        -1px  0px 0px #000,
+         1px  0px 0px #000,
+        -1px  1px 0px #000,
+         0px  1px 0px #000,
+         1px  1px 0px #000;
+    }
+    .time_main {
+        font-size: 1.2rem;
+    } 
+    .dot_container{
+        top: 18%;
+        height: 70%;
+        left: 35%;
+        width: 3px;
+    }
+    .dot_2 {
+        height: 10px;
+        width: 10px;
+    }
+    .dot_1 {
+        height: 10px;
+        width: 10px;
+    }
+    .dot-1 {
+        height: 10px;
+        width: 10px;
+    }
+    .dot-2 {
+        height: 10px;
+        width: 10px;
+    }
+    .dot-main {
+        height: 20px;
+        width: 20px;
+    }
+    .content{
+        left: 40%;
+    }
+}
+@media (min-width: 901px) and (max-width: 1200px) {
+    .line {
+        border-right: 4px solid white;
+        left: 35%;
+    }
+    .time_container{
+        top: 18%;
+        height: 70%;
+        left: 15%;
+        width: 170px;
+        font-size: 1.2rem;
+        text-shadow: 
+        -1px -1px 0px #000,
+         0px -1px 0px #000,
+         1px -1px 0px #000,
+        -1px  0px 0px #000,
+         1px  0px 0px #000,
+        -1px  1px 0px #000,
+         0px  1px 0px #000,
+         1px  1px 0px #000;
+    }
+    .time_main {
+        font-size: 1.6rem;
+    } 
+    .dot_container{
+        top: 18%;
+        height: 70%;
+        left: 35%;
+        width: 4px;
+    }
+    .dot_2 {
+        height: 13px;
+        width: 13px;
+    }
+    .dot_1 {
+        height: 13px;
+        width: 13px;
+    }
+    .dot-1 {
+        height: 13px;
+        width: 13px;
+    }
+    .dot-2 {
+        height: 13px;
+        width: 13px;
+    }
+    .dot-main {
+        height: 24px;
+        width: 24px;
+    }
+    .content{
+        left: 40%;
+    }
+}
+@media (min-width: 1201px) and (max-width: 1600px) {
+    .line {
+        border-right: 5px solid white;
+        left: 40%;
+    }
+    .time_container{
+        top: 23%;
+        height: 60%;
+        left: 23%;
+        width: 200px;
+        font-size: 1.6rem;
+        text-shadow: 
+        -1px -1px 0px #000,
+         0px -1px 0px #000,
+         1px -1px 0px #000,
+        -1px  0px 0px #000,
+         1px  0px 0px #000,
+        -1px  1px 0px #000,
+         0px  1px 0px #000,
+         1px  1px 0px #000;
+    }
+    .time_main {
+        font-size: 2rem;
+    } 
+    .dot_container{
+        top: 23%;
+        height: 60%;
+        left: 40%;
+        width: 5px;
+    }
+    .dot_2 {
+        height: 19px;
+        width: 19px;
+    }
+    .dot_1 {
+        height: 19px;
+        width: 19px;
+    }
+    .dot-1 {
+        height: 19px;
+        width: 19px;
+    }
+    .dot-2 {
+        height: 19px;
+        width: 19px;
+    }
+    .dot-main {
+        height: 32px;
+        width: 32px;
+    }
+}
+@media (min-width: 1601px) and (max-width: 1900px) {
+    .line {
+        border-right: 5px solid white;
+        left: 40%;
+    }
+    .time_container{
+        top: 23%;
+        height: 60%;
+        left: 25%;
+        width: 200px;
+        font-size: 1.6rem;
+    }
+    .time_main {
+        font-size: 2.2rem;
+    } 
+    .dot_container{
+        top: 23%;
+        height: 60%;
+        left: 40%;
+        width: 5px;
+    }
+    .dot_2 {
+        height: 19px;
+        width: 19px;
+    }
+    .dot_1 {
+        height: 19px;
+        width: 19px;
+    }
+    .dot-1 {
+        height: 19px;
+        width: 19px;
+    }
+    .dot-2 {
+        height: 19px;
+        width: 19px;
+    }
+    .dot-main {
+        height: 32px;
+        width: 32px;
+    }
+}

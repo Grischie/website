@@ -1,12 +1,12 @@
 var currentPath = window.location.pathname;
 var navigationLinks = document.querySelectorAll(".navigation a");
-if(currentPath == "/about.php"){
+if(currentPath == "/about.html"){
 	navigationLinks[1].style.color = "lightskyblue";
-} else if (currentPath == "/timeline.php"){
+} else if (currentPath == "/timeline.html"){
 	navigationLinks[2].style.color = "lightskyblue";
-} else if (currentPath == "/contact.php"){
+} else if (currentPath == "/contact.html"){
 	navigationLinks[3].style.color = "lightskyblue";
-} else if (currentPath == "/imprint.php"){
+} else if (currentPath == "/imprint.html"){
 	navigationLinks[5].style.color = "lightskyblue";
 } else {
 	navigationLinks[0].style.color = "lightskyblue";
